@@ -20,8 +20,12 @@ const createActionsBatch = async (actions) => {
   try {
     logger.info("Creating actions batch", {
       actionsLength: actions.length,
+      actions,
     });
-    //   return;
+
+    // logger.info(`actions:`, JSON.stringify(actions));
+    return; // comment this to create actions in DB
+
     // _.map(actions, ActionService.createAction);
     const res = await Actions.insertMany(actions);
     logger.debug("actions created", {

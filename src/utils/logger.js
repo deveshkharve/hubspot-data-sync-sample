@@ -1,7 +1,15 @@
 const winston = require("winston");
 const path = require("path");
+const fs = require("fs");
+const util = require("util");
 
-// Define log levels
+// Ensure logs directory exists
+const logDir = path.join(__dirname, "logs");
+if (!fs.existsSync(logDir)) {
+  fs.mkdirSync(logDir);
+}
+
+// Define log levels and colors
 const levels = {
   error: 0,
   warn: 1,
@@ -10,7 +18,6 @@ const levels = {
   debug: 4,
 };
 
-// Define log colors
 const colors = {
   error: "red",
   warn: "yellow",
@@ -19,71 +26,57 @@ const colors = {
   debug: "blue",
 };
 
-// Add colors to winston
 winston.addColors(colors);
 
-// Create format for console output
-const consoleFormat = winston.format.combine(
-  winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
-  winston.format.colorize({ all: true }),
-  winston.format.printf(
-    (info) => `${info.timestamp} ${info.level}: ${info.message}`
-  )
-);
+// Reusable formatter (console + files)
+const customFormatter = winston.format.printf((info) => {
+  const message =
+    typeof info.message === "object"
+      ? util.inspect(info.message, { depth: null, maxArrayLength: null })
+      : info.message;
 
-// Create format for file output (without colors)
-const fileFormat = winston.format.combine(
-  winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
-  winston.format.printf(
-    (info) => `${info.timestamp} ${info.level}: ${info.message}`
-  )
-);
+  let args = "";
+  if (info[Symbol.for("splat")]) {
+    args = info[Symbol.for("splat")]
+      .map((arg) =>
+        typeof arg === "object"
+          ? util.inspect(arg, { depth: null, maxArrayLength: null })
+          : arg
+      )
+      .join(" ");
+  }
 
-// Determine log level based on environment
-const level = process.env.NODE_ENV === "production" ? "info" : "debug";
+  return `${info.timestamp} ${info.level}: ${message} ${args}`.trim();
+});
 
-// Create the logger
+// Final logger instance
 const logger = winston.createLogger({
-  level,
+  level: process.env.NODE_ENV === "production" ? "info" : "debug",
   levels,
   format: winston.format.combine(
     winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
-    winston.format.printf((info) => {
-      // Handle multiple parameters that were passed to the logger
-      const message =
-        info.message instanceof Object
-          ? JSON.stringify(info.message)
-          : info.message;
-
-      // Format additional arguments if they exist
-      let args = "";
-      if (info[Symbol.for("splat")]) {
-        args = info[Symbol.for("splat")]
-          .map((arg) => (typeof arg === "object" ? JSON.stringify(arg) : arg))
-          .join(" ");
-      }
-
-      return `${info.timestamp} ${info.level}: ${message} ${args}`.trim();
-    })
+    winston.format.splat(),
+    customFormatter
   ),
   transports: [
-    // Console transport
     new winston.transports.Console({
       format: winston.format.combine(
         winston.format.colorize({ all: true }),
-        winston.format.splat()
+        winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
+        winston.format.splat(),
+        customFormatter
       ),
     }),
-    // File transport for all logs
     new winston.transports.File({
-      filename: path.join("logs", "combined.log"),
-      format: winston.format.splat(),
+      filename: path.join(logDir, "run_logs.log"),
+      maxsize: 50 * 1024 * 1024, // 50MB
+      maxFiles: 5,
+      tailable: true,
+      zippedArchive: true,
     }),
-    // File transport for error logs
     new winston.transports.File({
-      filename: path.join("logs", "error.log"),
+      filename: path.join(logDir, "error.log"),
       level: "error",
-      format: winston.format.splat(),
     }),
   ],
 });

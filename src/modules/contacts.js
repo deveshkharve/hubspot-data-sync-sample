@@ -3,6 +3,9 @@ const { getHubspotClient, checkAndRefreshToken } = require("./hubspot");
 
 const logger = require("../utils/logger");
 const { filterNullValuesFromObject, delay } = require("../utils/common");
+const NodeCache = require("node-cache");
+
+const cache = new NodeCache({ stdTTL: 3600, checkperiod: 600 });
 
 const hubspotClient = getHubspotClient();
 
@@ -70,6 +73,12 @@ const getCompanyAssociations = async (contactIds) => {
 
 const getContactDetails = async (contactId) => {
   try {
+    // cache response or use database
+    const cachedContact = cache.get(contactId);
+    if (cachedContact) {
+      return cachedContact;
+    }
+
     const contact = await hubspotClient.crm.contacts.basicApi.getById(
       contactId,
       [
@@ -83,7 +92,7 @@ const getContactDetails = async (contactId) => {
       ]
     );
 
-    return {
+    const contactDetails = {
       id: contactId,
       email: contact.properties.email,
       contact_name: (
@@ -96,6 +105,10 @@ const getContactDetails = async (contactId) => {
       contact_status: contact.properties.hs_lead_status,
       contact_score: parseInt(contact.properties.hubspotscore) || 0,
     };
+
+    cache.set(contactId, contactDetails);
+
+    return contactDetails;
   } catch (err) {
     logger.error(`Failed to fetch contact ${contactId}`, {
       error: err.message,
@@ -103,6 +116,35 @@ const getContactDetails = async (contactId) => {
     return null;
   }
 };
+
+const getContactDetailsInBatch = async (contactIds) => {
+  try {
+    const contactDetails = await hubspotClient.crm.contacts.batchApi.read(
+      contactIds,
+      [
+        "firstname",
+        "lastname",
+        "email",
+        "jobtitle",
+        "hs_analytics_source",
+        "hs_lead_status",
+        "hubspotscore",
+      ]
+    );
+
+    contactDetails.forEach((contact) => {
+      cache.set(contact.id, contact);
+    });
+
+    return contactDetails;
+  } catch (err) {
+    logger.error(`Failed to fetch contact details in batch`, {
+      error: err.message,
+    });
+    return null;
+  }
+};
+
 /**
  * Get recently modified contacts as 100 contacts per page
  */
@@ -240,6 +282,7 @@ const processContacts = async (domain, hubId, qu) => {
 const ContactService = {
   processContacts,
   getContactDetails,
+  getContactDetailsInBatch,
 };
 
 module.exports = ContactService;

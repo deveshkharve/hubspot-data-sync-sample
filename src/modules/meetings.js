@@ -3,6 +3,7 @@ const DomainService = require("./domains");
 const logger = require("../utils/logger");
 const { delay, filterNullValuesFromObject } = require("../utils/common");
 const { getContactDetails } = require("./contacts");
+const { rateLimited } = require("../utils/rate-limiter");
 
 const hubspotClient = getHubspotClient();
 
@@ -31,11 +32,20 @@ const generateLastModifiedDateFilter = (
  */
 const getAssociatedContacts = async (meetingId) => {
   try {
-    const response = await hubspotClient.crm.objects.associationsApi.getAll(
-      "meetings",
-      meetingId,
-      "contacts"
+    // const response = await hubspotClient.crm.objects.associationsApi.getAll(
+    //   "meetings",
+    //   meetingId,
+    //   "contacts"
+    // );
+
+    const getAllLimited = rateLimited(
+      hubspotClient.crm.objects.associationsApi.getAll.bind(
+        hubspotClient.crm.objects.associationsApi
+      )
     );
+
+    const response = await getAllLimited("meetings", meetingId, "contacts");
+
     return response.results.map((assoc) => assoc.id);
   } catch (err) {
     logger.error(`Failed to get associated contacts for meeting ${meetingId}`, {
@@ -101,6 +111,7 @@ const processMeetingRecord = async (meetingData, lastPulledDate, qu) => {
   //   console.log("contactIds>>>", contactIds);
 
   for (const contactId of contactIds) {
+    // TODO: figure out if batch API is available
     const contactDetails = await getContactDetails(contactId);
     logger.debug("Fetched contactProps for:", {
       meetingId: meetingData.id,
@@ -136,14 +147,14 @@ const processMeetingRecord = async (meetingData, lastPulledDate, qu) => {
           isCreated ? meetingData.createdAt : meetingData.updatedAt
         ),
         ...actionTemplate,
-      },
-      (err) => {
-        if (err) {
-          console.error("Meeting Queue action failed", err);
-        } else {
-          console.log("Meeting Action completed");
-        }
       }
+      // ,(err) => {
+      //   if (err) {
+      //     console.error("Meeting Queue action failed", err);
+      //   } else {
+      //     console.log("Meeting Action completed");
+      //   }
+      // }
     );
   } catch (err) {
     logger.error("error queuing action>>>", err);

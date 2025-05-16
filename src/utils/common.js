@@ -36,6 +36,7 @@ const normalizePropertyName = (key) =>
 
 // Where the batched data is written
 const goal = async (actions) => {
+  // console.log("actions", actions);
   await ActionService.createActionsBatch(actions);
 };
 
@@ -49,7 +50,7 @@ const createQueue = (domain, actions) => {
 
       actions.push(action);
 
-      if (actions.length > 100) {
+      if (actions.length > 2000) {
         const copyOfActions = _.cloneDeep(actions);
         actions.splice(0, actions.length);
 
