@@ -1,4 +1,4 @@
-const Actions = require("../models/Actions");
+const Actions = require("../db/models/Actions");
 const logger = require("../utils/logger");
 const _ = require("lodash");
 

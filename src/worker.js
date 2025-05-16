@@ -78,7 +78,7 @@ const pullDataFromHubspot = async () => {
   }
 
   logger.info("finish pulling data from HubSpot. exiting...");
-  // process.exit();
+  process.exit();
 };
 
 module.exports = pullDataFromHubspot;

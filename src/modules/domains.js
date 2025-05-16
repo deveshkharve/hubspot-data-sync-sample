@@ -1,4 +1,4 @@
-const Domain = require("../models/Domain");
+const Domain = require("../db/models/Domain");
 const logger = require("../utils/logger");
 
 const saveDomain = async (domain) => {
