@@ -36,7 +36,6 @@ const normalizePropertyName = (key) =>
 
 // Where the batched data is written
 const goal = async (actions) => {
-  // console.log("actions", actions);
   await ActionService.createActionsBatch(actions);
 };
 

@@ -1,479 +1,446 @@
-2025-05-16 22:31:11 info: start pulling data from HubSpot
-2025-05-16 22:31:13 info: start processing account: {"lastPulledDates":{"companies":"2023-01-29T01:49:14.863Z","contacts":"2023-01-29T01:49:15.670Z","deals":"2020-01-01T00:00:00.000Z","calls":"2023-01-20T01:00:06.307+00:00","emails":"2023-01-20T01:00:06.307+00:00","meetings":"2023-01-29T01:49:16.781Z","formFills":"2023-01-20T01:00:06.307+00:00","communications":"2023-01-20T01:00:06.307+00:00","marketingEmails":"2023-01-20T01:00:06.307+00:00","tasks":"2023-01-20T01:00:06.307+00:00"},"_id":"63819267c90f51b47d04ff30","accessToken":"CJaU7P7KMhISggOAUAAASCAAAABYAgEAAAGAGMTi7gwgrPOoFSia0CEyFAwWMAJYKcsVPm…","hubId":"26980676","hubDomain":"Work Sample Test-dev-26980676.com","refreshToken":"eu1-64c2-0705-4a5b-87a9-1812616e7560","paused":false,"canWrite":true,"afters":{},"actions":[],"configuration":{}}
-2025-05-16 22:31:13 info: processing contacts { domain: new ObjectId("5f667c45c60ee353ad89d5d3"), hubId: '26980676' }
-2025-05-16 22:31:14 info: processing contact info 1
-2025-05-16 22:31:14 info: processing contact info 451
-2025-05-16 22:31:14 info: processing contact info 501
-2025-05-16 22:31:14 info: processing contact info 101
-2025-05-16 22:31:14 info: processing contact info 301
-2025-05-16 22:31:14 info: processing contact info 801
-2025-05-16 22:31:14 info: processing contact info 951
-2025-05-16 22:31:14 info: processing contact info 51
-2025-05-16 22:31:14 info: processing contact info 251
-2025-05-16 22:31:14 info: processed contacts
-2025-05-16 22:31:14 info: Processing companies for domain new ObjectId("5f667c45c60ee353ad89d5d3")
-2025-05-16 22:31:14 info: fetch company batch { count: 100, after: 100 }
-2025-05-16 22:31:14 info: Getting Company data for 9473380301. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108363. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108150. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108142. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108359. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108392. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108620. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380070. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380076. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380564. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108381. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380335. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108611. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108352. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380293. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380064. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380809. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380294. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108651. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380542. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108644. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380797. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380800. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380808. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380576. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380578. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108606. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108399. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 7047717356. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 7049276381. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380815. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108130. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380310. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380079. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108658. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380336. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380317. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380803. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380587. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108109. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108126. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380061. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380316. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108615. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380794. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380311. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108364. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108390. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380057. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380300. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380543. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380561. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108868. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380298. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108863. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108121. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380292. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108861. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380814. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108407. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108408. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108870. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108865. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380322. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380320. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380078. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108657. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380555. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380804. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474052856. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380573. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108626. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108120. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380810. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380807. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380548. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108368. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380599. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380796. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380560. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108396. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474052853. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108370. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380601. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380562. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380579. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380567. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108358. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108619. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108628. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108146. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108400. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380051. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 7049276372. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108102. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108646. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380341. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474108621. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9473380299. isCreated: true
-2025-05-16 22:31:14 info: Getting Company data for 9474052854. isCreated: true
-2025-05-16 22:31:15 info: fetch company batch { count: 100, after: 200 }
-2025-05-16 22:31:15 info: Getting Company data for 9473380821. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108403. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474052851. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108612. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380339. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108645. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380050. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380570. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474052852. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108605. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108134. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 7047717358. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108366. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108095. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380290. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108346. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108647. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108632. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380595. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108152. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380591. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108143. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380801. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108371. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380565. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108141. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380544. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108404. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380302. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380583. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108144. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108608. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108405. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108365. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108650. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108663. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108616. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380075. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108625. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108129. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380056. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108387. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380819. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108379. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380062. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380577. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380575. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380820. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380344. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108391. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108633. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108661. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108377. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108097. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380342. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108394. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108397. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108401. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108350. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108631. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108104. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108372. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380588. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380593. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380818. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108643. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380580. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380052. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108096. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108614. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108603. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108360. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108406. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380574. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108106. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380545. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380581. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380572. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380318. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380600. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380340. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474052849. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108634. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380072. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108382. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108862. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380086. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380559. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380325. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380822. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380552. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380073. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108136. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108347. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108376. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108108. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380547. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108111. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108653. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380802. isCreated: true
-2025-05-16 22:31:15 info: fetch company batch { count: 100, after: 300 }
-2025-05-16 22:31:15 info: Getting Company data for 9474108093. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108402. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380584. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380309. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380319. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108393. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108867. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108117. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108112. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380556. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380063. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380816. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108114. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108630. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108859. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380047. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380286. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380598. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380590. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380323. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380068. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380046. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380324. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380055. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380303. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108373. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108664. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380058. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108637. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380333. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380331. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380283. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380048. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380541. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108864. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474053050. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108860. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380307. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380312. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380592. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108362. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 7206034379. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108380. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108149. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108123. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108635. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108665. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380315. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380088. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380054. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380345. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108100. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380297. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108116. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380328. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380084. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380563. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380074. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108636. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380060. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108153. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380080. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108617. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108388. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108148. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380550. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108094. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380089. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108122. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108623. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380083. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108641. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380597. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474052850. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380289. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108609. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108654. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380308. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380811. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108113. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108101. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108627. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108119. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380551. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108355. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380314. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108629. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108356. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108105. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108660. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380566. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380553. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380805. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380085. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9473380087. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108132. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108604. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108349. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108128. isCreated: true
-2025-05-16 22:31:15 info: Getting Company data for 9474108103. isCreated: true
-2025-05-16 22:31:16 info: fetch company batch { count: 100, after: 400 }
-2025-05-16 22:31:16 info: Getting Company data for 9474108147. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108656. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380798. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108125. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380554. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108107. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108098. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108131. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380313. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108655. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380594. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380558. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380571. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108607. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380540. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108648. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108624. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108642. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108869. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380081. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108384. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380285. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380288. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108110. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380539. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380065. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380795. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380546. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474052855. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108383. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108622. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380586. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380817. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 7206614258. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380329. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108378. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380049. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380295. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380296. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380291. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108099. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108618. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380071. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380799. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380287. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108662. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380069. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108395. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380282. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108649. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108361. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108357. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108140. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380326. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380806. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380569. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380321. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380337. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380813. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108354. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380304. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380538. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108133. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380053. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380284. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108367. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380082. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380334. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380306. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108610. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108858. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380596. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108151. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380305. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380066. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108137. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380557. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380327. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108613. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474052857. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108638. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380568. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108145. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108127. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108866. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380549. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108138. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108374. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380332. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380067. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380077. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380330. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108348. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380585. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108115. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108139. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108652. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380059. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380582. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108353. isCreated: true
-2025-05-16 22:31:16 info: fetch company batch { count: 17, after: NaN }
-2025-05-16 22:31:16 info: Getting Company data for 9474108375. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108659. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108124. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380812. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380589. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108409. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108639. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108640. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108398. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108602. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108135. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108351. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108118. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108369. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474108389. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9473380343. isCreated: true
-2025-05-16 22:31:16 info: Getting Company data for 9474052848. isCreated: true
-2025-05-16 22:31:16 info: Updating domain with new lastPulledDates: 5f667c45c60ee353ad89d5d3
-2025-05-16 22:31:16 info: processed companies
-2025-05-16 22:31:16 info: Processing meetings for domain new ObjectId("5f667c45c60ee353ad89d5d3")
-2025-05-16 22:31:16 info: fetched meetings batch { count: 33, after: NaN }
-2025-05-16 22:31:16 info: Getting meeting details for 15945418964
-2025-05-16 22:31:16 info: Getting meeting details for 15945419204
-2025-05-16 22:31:16 info: Getting meeting details for 16302144467
-2025-05-16 22:31:16 info: Getting meeting details for 16347010533
-2025-05-16 22:31:16 info: Getting meeting details for 16347031258
-2025-05-16 22:31:16 info: Getting meeting details for 16347904981
-2025-05-16 22:31:16 info: Getting meeting details for 16351568878
-2025-05-16 22:31:16 info: Getting meeting details for 16356442873
-2025-05-16 22:31:16 info: Getting meeting details for 16356440039
-2025-05-16 22:31:16 info: Getting meeting details for 16356440257
-2025-05-16 22:31:20 info: Getting meeting details for 16432210142
-2025-05-16 22:31:20 info: Getting meeting details for 16449263038
-2025-05-16 22:31:20 info: Getting meeting details for 16452331498
-2025-05-16 22:31:20 info: Getting meeting details for 16453996023
-2025-05-16 22:31:20 info: Getting meeting details for 16453997260
-2025-05-16 22:31:20 info: Getting meeting details for 16454343100
-2025-05-16 22:31:20 info: Getting meeting details for 16454343408
-2025-05-16 22:31:20 info: Getting meeting details for 16454000340
-2025-05-16 22:31:20 info: Getting meeting details for 16455627455
-2025-05-16 22:31:20 info: Getting meeting details for 16455684796
-2025-05-16 22:31:23 info: Getting meeting details for 16454004433
-2025-05-16 22:31:23 info: Getting meeting details for 16454644931
-2025-05-16 22:31:23 info: Getting meeting details for 16456795343
-2025-05-16 22:31:23 info: Getting meeting details for 16456831696
-2025-05-16 22:31:23 info: Getting meeting details for 16457037808
-2025-05-16 22:31:23 info: Getting meeting details for 16457087713
-2025-05-16 22:31:23 info: Getting meeting details for 16472006592
-2025-05-16 22:31:23 info: Getting meeting details for 16483875566
-2025-05-16 22:31:23 info: Getting meeting details for 16494141927
-2025-05-16 22:31:23 info: Getting meeting details for 16494142938
-2025-05-16 22:31:27 info: Getting meeting details for 16494359753
-2025-05-16 22:31:27 info: Getting meeting details for 16494528971
-2025-05-16 22:31:27 info: Getting meeting details for 16838470090
-2025-05-16 22:31:28 info: Updating domain with new lastPulledDates: 5f667c45c60ee353ad89d5d3
-2025-05-16 22:31:28 info: processed meetings
-2025-05-16 22:31:28 info: Creating actions batch {
+2025-05-16 23:56:16 info: start pulling data from HubSpot
+2025-05-16 23:56:17 info: start processing account: {"lastPulledDates":{"companies":"2023-01-29T01:49:14.863Z","contacts":"2023-01-29T01:49:15.670Z","deals":"2020-01-01T00:00:00.000Z","calls":"2023-01-20T01:00:06.307+00:00","emails":"2023-01-20T01:00:06.307+00:00","meetings":"2023-01-29T01:49:16.781Z","formFills":"2023-01-20T01:00:06.307+00:00","communications":"2023-01-20T01:00:06.307+00:00","marketingEmails":"2023-01-20T01:00:06.307+00:00","tasks":"2023-01-20T01:00:06.307+00:00"},"_id":"63819267c90f51b47d04ff30","accessToken":"CJaU7P7KMhISggOAUAAASCAAAABYAgEAAAGAGMTi7gwgrPOoFSia0CEyFAwWMAJYKcsVPm…","hubId":"26980676","hubDomain":"Work Sample Test-dev-26980676.com","refreshToken":"eu1-64c2-0705-4a5b-87a9-1812616e7560","paused":false,"canWrite":true,"afters":{},"actions":[],"configuration":{}}
+2025-05-16 23:56:18 info: processing contacts { domain: new ObjectId("5f667c45c60ee353ad89d5d3"), hubId: '26980676' }
+2025-05-16 23:56:19 info: processing contact info 1
+2025-05-16 23:56:19 info: processing contact info 451
+2025-05-16 23:56:19 info: processing contact info 501
+2025-05-16 23:56:19 info: processing contact info 101
+2025-05-16 23:56:19 info: processing contact info 301
+2025-05-16 23:56:19 info: processing contact info 801
+2025-05-16 23:56:19 info: processing contact info 951
+2025-05-16 23:56:19 info: processing contact info 51
+2025-05-16 23:56:19 info: processing contact info 251
+2025-05-16 23:56:19 info: processed contacts
+2025-05-16 23:56:19 info: Processing companies for domain new ObjectId("5f667c45c60ee353ad89d5d3")
+2025-05-16 23:56:20 info: fetch company batch { count: 100, after: 100 }
+2025-05-16 23:56:20 info: Getting Company data for 9473380301. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108363. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108150. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108142. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108359. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108392. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108620. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380070. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380076. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380564. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108381. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380335. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108611. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108352. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380293. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380064. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380809. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380294. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108651. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380542. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108644. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380797. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380800. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380808. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380576. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380578. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108606. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108399. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 7047717356. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 7049276381. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380815. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108130. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380310. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380079. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108658. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380336. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380317. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380803. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380587. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108109. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108126. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380061. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380316. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108615. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380794. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380311. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108364. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108390. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380057. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380300. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380543. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380561. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108868. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380298. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108863. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108121. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380292. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108861. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380814. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108407. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108408. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108870. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108865. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380322. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380320. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380078. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108657. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380555. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380804. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474052856. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380573. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108626. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108120. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380810. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380807. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380548. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108368. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380599. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380796. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380560. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108396. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474052853. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108370. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380601. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380562. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380579. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380567. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108358. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108619. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108628. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108146. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108400. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380051. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 7049276372. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108102. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108646. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380341. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108621. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380299. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474052854. isCreated: true
+2025-05-16 23:56:20 info: fetch company batch { count: 100, after: 200 }
+2025-05-16 23:56:20 info: Getting Company data for 9473380821. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108403. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474052851. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108612. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380339. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108645. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380050. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380570. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474052852. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108605. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108134. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 7047717358. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108366. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108095. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380290. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108346. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108647. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108632. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380595. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108152. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380591. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108143. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380801. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108371. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380565. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108141. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380544. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108404. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380302. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380583. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108144. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108608. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108405. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108365. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108650. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108663. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108616. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380075. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108625. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108129. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380056. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108387. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380819. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108379. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380062. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380577. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380575. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380820. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380344. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108391. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108633. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108661. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108377. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108097. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380342. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108394. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108397. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108401. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108350. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108631. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108104. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108372. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380588. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380593. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380818. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108643. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380580. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380052. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108096. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108614. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108603. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108360. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108406. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380574. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108106. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380545. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380581. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380572. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380318. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380600. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380340. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474052849. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108634. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380072. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108382. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108862. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380086. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380559. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380325. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380822. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380552. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380073. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108136. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108347. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108376. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108108. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380547. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108111. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9474108653. isCreated: true
+2025-05-16 23:56:20 info: Getting Company data for 9473380802. isCreated: true
+2025-05-16 23:56:21 info: fetch company batch { count: 100, after: 300 }
+2025-05-16 23:56:21 info: Getting Company data for 9474108093. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108402. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380584. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380309. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380319. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108393. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108867. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108117. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108112. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380556. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380063. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380816. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108114. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108630. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108859. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380047. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380286. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380598. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380590. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380323. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380068. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380046. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380324. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380055. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380303. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108373. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108664. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380058. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108637. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380333. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380331. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380283. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380048. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380541. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108864. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474053050. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108860. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380307. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380312. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380592. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108362. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 7206034379. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108380. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108149. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108123. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108635. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108665. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380315. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380088. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380054. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380345. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108100. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380297. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108116. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380328. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380084. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380563. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380074. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108636. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380060. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108153. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380080. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108617. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108388. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108148. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380550. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108094. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380089. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108122. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108623. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380083. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108641. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380597. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474052850. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380289. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108609. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108654. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380308. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380811. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108113. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108101. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108627. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108119. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380551. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108355. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380314. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108629. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108356. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108105. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108660. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380566. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380553. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380805. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380085. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380087. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108132. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108604. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108349. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108128. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108103. isCreated: true
+2025-05-16 23:56:21 info: fetch company batch { count: 100, after: 400 }
+2025-05-16 23:56:21 info: Getting Company data for 9474108147. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108656. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380798. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108125. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380554. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108107. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108098. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108131. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380313. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108655. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380594. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380558. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380571. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108607. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380540. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108648. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108624. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108642. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108869. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380081. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108384. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380285. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380288. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108110. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380539. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380065. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380795. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380546. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474052855. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108383. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108622. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380586. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380817. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 7206614258. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380329. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108378. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380049. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380295. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380296. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380291. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108099. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108618. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380071. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380799. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380287. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108662. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380069. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108395. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380282. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108649. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108361. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108357. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108140. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380326. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380806. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380569. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380321. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380337. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380813. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108354. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380304. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380538. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108133. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380053. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380284. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108367. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380082. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380334. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380306. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108610. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108858. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380596. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108151. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380305. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380066. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108137. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380557. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380327. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108613. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474052857. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108638. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380568. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108145. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108127. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108866. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380549. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108138. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108374. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380332. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380067. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380077. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380330. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108348. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380585. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108115. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108139. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108652. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380059. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9473380582. isCreated: true
+2025-05-16 23:56:21 info: Getting Company data for 9474108353. isCreated: true
+2025-05-16 23:56:22 info: fetch company batch { count: 17, after: NaN }
+2025-05-16 23:56:22 info: Getting Company data for 9474108375. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108659. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108124. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9473380812. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9473380589. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108409. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108639. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108640. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108398. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108602. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108135. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108351. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108118. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108369. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474108389. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9473380343. isCreated: true
+2025-05-16 23:56:22 info: Getting Company data for 9474052848. isCreated: true
+2025-05-16 23:56:22 info: Updating domain with new lastPulledDates: 5f667c45c60ee353ad89d5d3
+2025-05-16 23:56:22 info: processed companies
+2025-05-16 23:56:22 info: Processing meetings for domain new ObjectId("5f667c45c60ee353ad89d5d3")
+2025-05-16 23:56:22 info: fetched meetings batch { count: 33, after: NaN }
+2025-05-16 23:56:36 info: Updating domain with new lastPulledDates: 5f667c45c60ee353ad89d5d3
+2025-05-16 23:56:36 info: processed meetings
+2025-05-16 23:56:36 info: Creating actions batch {
   actionsLength: 459,
   actions: [
     {
@@ -4759,19 +4726,37 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-11T23:13:33.842Z,
+      actionDate: 2023-02-17T06:28:57.985Z,
       includeInAnalytics: 0,
-      identity: '16356440257',
+      identity: '15945418964',
       properties: {
-        meeting_id: '16356440257',
+        meeting_id: '15945418964',
+        meeting_description: '<div style="" dir="auto" data-top-level="true"><p style="margin:0;">Cool meeting</p></div>',
+        hs_meeting_outcome: 'COMPLETED',
+        meeting_start_time: '2023-02-13T15:00:00Z',
+        meeting_end_time: '2023-02-13T15:15:00Z',
+        contact_details: []
+      }
+    },
+    {
+      actionName: 'Meeting Created',
+      actionDate: 2023-02-17T06:30:45.471Z,
+      includeInAnalytics: 0,
+      identity: '15945419204',
+      properties: {
+        meeting_id: '15945419204',
+        meeting_description: '<div style="" dir="auto" data-top-level="true"><p style="margin:0;">Over zoom</p></div>',
+        hs_meeting_outcome: 'COMPLETED',
+        meeting_start_time: '2023-02-09T04:30:00Z',
+        meeting_end_time: '2023-02-09T04:45:00Z',
         contact_details: [
           {
-            id: '51',
-            email: 'bh@hubspot.com',
-            contact_name: 'Brian Halligan (Sample Contact)',
-            contact_title: 'CEO',
+            id: '251',
+            email: 'michael@company4.com',
+            contact_name: 'Michael Gibson',
+            contact_title: 'CTO',
             contact_source: 'OFFLINE',
-            contact_status: null,
+            contact_status: 'NEW',
             contact_score: 0
           }
         ]
@@ -4784,33 +4769,12 @@
       identity: '16302144467',
       properties: {
         meeting_id: '16302144467',
-        contact_details: [
-          {
-            id: '51',
-            email: 'bh@hubspot.com',
-            contact_name: 'Brian Halligan (Sample Contact)',
-            contact_title: 'CEO',
-            contact_source: 'OFFLINE',
-            contact_status: null,
-            contact_score: 0
-          }
-        ]
-      }
-    },
-    {
-      actionName: 'Meeting Created',
-      actionDate: 2023-02-17T06:28:57.985Z,
-      includeInAnalytics: 0,
-      identity: '15945418964',
-      properties: { meeting_id: '15945418964', contact_details: [] }
-    },
-    {
-      actionName: 'Meeting Created',
-      actionDate: 2023-03-11T02:43:05.384Z,
-      includeInAnalytics: 0,
-      identity: '16347904981',
-      properties: {
-        meeting_id: '16347904981',
+        meeting_title: 'testestest',
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-11T08:15:00Z',
+        meeting_end_time: '2023-03-11T08:45:00Z',
         contact_details: [
           {
             id: '51',
@@ -4831,6 +4795,11 @@
       identity: '16347010533',
       properties: {
         meeting_id: '16347010533',
+        meeting_title: 'ezezezezez',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-10T21:00:00Z',
+        meeting_end_time: '2023-03-10T21:30:00Z',
         contact_details: [
           {
             id: '51',
@@ -4839,46 +4808,6 @@
             contact_title: 'CEO',
             contact_source: 'OFFLINE',
             contact_status: null,
-            contact_score: 0
-          }
-        ]
-      }
-    },
-    {
-      actionName: 'Meeting Created',
-      actionDate: 2023-03-11T22:59:49.300Z,
-      includeInAnalytics: 0,
-      identity: '16356442873',
-      properties: {
-        meeting_id: '16356442873',
-        contact_details: [
-          {
-            id: '51',
-            email: 'bh@hubspot.com',
-            contact_name: 'Brian Halligan (Sample Contact)',
-            contact_title: 'CEO',
-            contact_source: 'OFFLINE',
-            contact_status: null,
-            contact_score: 0
-          }
-        ]
-      }
-    },
-    {
-      actionName: 'Meeting Created',
-      actionDate: 2023-02-17T06:30:45.471Z,
-      includeInAnalytics: 0,
-      identity: '15945419204',
-      properties: {
-        meeting_id: '15945419204',
-        contact_details: [
-          {
-            id: '251',
-            email: 'michael@company4.com',
-            contact_name: 'Michael Gibson',
-            contact_title: 'CTO',
-            contact_source: 'OFFLINE',
-            contact_status: 'NEW',
             contact_score: 0
           }
         ]
@@ -4891,6 +4820,11 @@
       identity: '16347031258',
       properties: {
         meeting_id: '16347031258',
+        meeting_title: 'Test completed meeting',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-11T03:00:00Z',
+        meeting_end_time: '2023-03-11T03:30:00Z',
         contact_details: [
           {
             id: '51',
@@ -4906,11 +4840,17 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-11T23:10:27.010Z,
+      actionDate: 2023-03-11T02:43:05.384Z,
       includeInAnalytics: 0,
-      identity: '16356440039',
+      identity: '16347904981',
       properties: {
-        meeting_id: '16356440039',
+        meeting_id: '16347904981',
+        meeting_title: 'Testing Meeting Creation',
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'CANCELED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-11T03:45:00Z',
+        meeting_end_time: '2023-03-11T04:15:00Z',
         contact_details: [
           {
             id: '51',
@@ -4931,6 +4871,12 @@
       identity: '16351568878',
       properties: {
         meeting_id: '16351568878',
+        meeting_title: 'future test 6',
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-18T21:30:00Z',
+        meeting_end_time: '2023-03-18T22:00:00Z',
         contact_details: [
           {
             id: '51',
@@ -4946,11 +4892,16 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-17T03:07:34.866Z,
+      actionDate: 2023-03-11T22:59:49.300Z,
       includeInAnalytics: 0,
-      identity: '16452331498',
+      identity: '16356442873',
       properties: {
-        meeting_id: '16452331498',
+        meeting_id: '16356442873',
+        meeting_title: 'new ms property test',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-11T23:00:00Z',
+        meeting_end_time: '2023-03-11T23:30:00Z',
         contact_details: [
           {
             id: '51',
@@ -4966,11 +4917,41 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-17T04:46:41.228Z,
+      actionDate: 2023-03-11T23:10:27.010Z,
       includeInAnalytics: 0,
-      identity: '16454343408',
+      identity: '16356440039',
       properties: {
-        meeting_id: '16454343408',
+        meeting_id: '16356440039',
+        meeting_title: 'testing new ms date',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-11T23:15:00Z',
+        meeting_end_time: '2023-03-11T23:45:00Z',
+        contact_details: [
+          {
+            id: '51',
+            email: 'bh@hubspot.com',
+            contact_name: 'Brian Halligan (Sample Contact)',
+            contact_title: 'CEO',
+            contact_source: 'OFFLINE',
+            contact_status: null,
+            contact_score: 0
+          }
+        ]
+      }
+    },
+    {
+      actionName: 'Meeting Created',
+      actionDate: 2023-03-11T23:13:33.842Z,
+      includeInAnalytics: 0,
+      identity: '16356440257',
+      properties: {
+        meeting_id: '16356440257',
+        meeting_title: 'testing new seconds date',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-11T23:15:00Z',
+        meeting_end_time: '2023-03-11T23:45:00Z',
         contact_details: [
           {
             id: '51',
@@ -4991,6 +4972,9 @@
       identity: '16432210142',
       properties: {
         meeting_id: '16432210142',
+        meeting_description: '<div style="" dir="auto" data-top-level="true"><p style="margin:0;">asdfasf</p></div>',
+        meeting_start_time: '2023-03-15T22:15:00Z',
+        meeting_end_time: '2023-03-15T22:30:00Z',
         contact_details: [
           {
             id: '301',
@@ -5006,91 +4990,17 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-17T04:38:04.918Z,
-      includeInAnalytics: 0,
-      identity: '16454343100',
-      properties: {
-        meeting_id: '16454343100',
-        contact_details: [
-          {
-            id: '51',
-            email: 'bh@hubspot.com',
-            contact_name: 'Brian Halligan (Sample Contact)',
-            contact_title: 'CEO',
-            contact_source: 'OFFLINE',
-            contact_status: null,
-            contact_score: 0
-          }
-        ]
-      }
-    },
-    {
-      actionName: 'Meeting Created',
-      actionDate: 2023-03-17T04:29:09.859Z,
-      includeInAnalytics: 0,
-      identity: '16453997260',
-      properties: {
-        meeting_id: '16453997260',
-        contact_details: [
-          {
-            id: '51',
-            email: 'bh@hubspot.com',
-            contact_name: 'Brian Halligan (Sample Contact)',
-            contact_title: 'CEO',
-            contact_source: 'OFFLINE',
-            contact_status: null,
-            contact_score: 0
-          }
-        ]
-      }
-    },
-    {
-      actionName: 'Meeting Created',
-      actionDate: 2023-03-17T05:11:26.411Z,
-      includeInAnalytics: 0,
-      identity: '16454000340',
-      properties: {
-        meeting_id: '16454000340',
-        contact_details: [
-          {
-            id: '51',
-            email: 'bh@hubspot.com',
-            contact_name: 'Brian Halligan (Sample Contact)',
-            contact_title: 'CEO',
-            contact_source: 'OFFLINE',
-            contact_status: null,
-            contact_score: 0
-          }
-        ]
-      }
-    },
-    {
-      actionName: 'Meeting Created',
-      actionDate: 2023-03-17T05:19:30.871Z,
-      includeInAnalytics: 0,
-      identity: '16455627455',
-      properties: {
-        meeting_id: '16455627455',
-        contact_details: [
-          {
-            id: '51',
-            email: 'bh@hubspot.com',
-            contact_name: 'Brian Halligan (Sample Contact)',
-            contact_title: 'CEO',
-            contact_source: 'OFFLINE',
-            contact_status: null,
-            contact_score: 0
-          }
-        ]
-      }
-    },
-    {
-      actionName: 'Meeting Created',
       actionDate: 2023-03-16T23:09:15.036Z,
       includeInAnalytics: 0,
       identity: '16449263038',
       properties: {
         meeting_id: '16449263038',
+        meeting_title: 'feedback meeting 1',
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-18T23:15:00Z',
+        meeting_end_time: '2023-03-18T23:45:00Z',
         contact_details: [
           {
             id: '51',
@@ -5106,11 +5016,16 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-17T05:37:12.391Z,
+      actionDate: 2023-03-17T03:07:34.866Z,
       includeInAnalytics: 0,
-      identity: '16455684796',
+      identity: '16452331498',
       properties: {
-        meeting_id: '16455684796',
+        meeting_id: '16452331498',
+        meeting_title: 'feedback meeting 2',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-17T03:15:00Z',
+        meeting_end_time: '2023-03-17T03:45:00Z',
         contact_details: [
           {
             id: '51',
@@ -5131,6 +5046,11 @@
       identity: '16453996023',
       properties: {
         meeting_id: '16453996023',
+        meeting_title: 'feedback meeting 3',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-17T04:15:00Z',
+        meeting_end_time: '2023-03-17T04:45:00Z',
         contact_details: [
           {
             id: '51',
@@ -5146,11 +5066,16 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-17T07:43:56.683Z,
+      actionDate: 2023-03-17T04:29:09.859Z,
       includeInAnalytics: 0,
-      identity: '16456795343',
+      identity: '16453997260',
       properties: {
-        meeting_id: '16456795343',
+        meeting_id: '16453997260',
+        meeting_title: 'feedback meeting 4',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-17T04:30:00Z',
+        meeting_end_time: '2023-03-17T05:00:00Z',
         contact_details: [
           {
             id: '51',
@@ -5166,11 +5091,16 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-19T22:41:51.519Z,
+      actionDate: 2023-03-17T04:38:04.918Z,
       includeInAnalytics: 0,
-      identity: '16494141927',
+      identity: '16454343100',
       properties: {
-        meeting_id: '16494141927',
+        meeting_id: '16454343100',
+        meeting_title: 'feedback meeting 5',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-17T04:45:00Z',
+        meeting_end_time: '2023-03-17T05:15:00Z',
         contact_details: [
           {
             id: '51',
@@ -5186,11 +5116,16 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-17T08:28:11.214Z,
+      actionDate: 2023-03-17T04:46:41.228Z,
       includeInAnalytics: 0,
-      identity: '16457087713',
+      identity: '16454343408',
       properties: {
-        meeting_id: '16457087713',
+        meeting_id: '16454343408',
+        meeting_title: 'meeting ignored until past start time',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-17T05:00:00Z',
+        meeting_end_time: '2023-03-17T05:30:00Z',
         contact_details: [
           {
             id: '51',
@@ -5206,11 +5141,16 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-19T23:05:54.857Z,
+      actionDate: 2023-03-17T05:11:26.411Z,
       includeInAnalytics: 0,
-      identity: '16494142938',
+      identity: '16454000340',
       properties: {
-        meeting_id: '16494142938',
+        meeting_id: '16454000340',
+        meeting_title: 'meeting ignored until past start time 2',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-17T05:15:00Z',
+        meeting_end_time: '2023-03-17T05:45:00Z',
         contact_details: [
           {
             id: '51',
@@ -5226,11 +5166,16 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-17T08:18:32.976Z,
+      actionDate: 2023-03-17T05:19:30.871Z,
       includeInAnalytics: 0,
-      identity: '16457037808',
+      identity: '16455627455',
       properties: {
-        meeting_id: '16457037808',
+        meeting_id: '16455627455',
+        meeting_title: 'final meeting attendance test',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-17T05:30:00Z',
+        meeting_end_time: '2023-03-17T06:00:00Z',
         contact_details: [
           {
             id: '51',
@@ -5246,11 +5191,16 @@
     },
     {
       actionName: 'Meeting Created',
-      actionDate: 2023-03-17T07:49:08.168Z,
+      actionDate: 2023-03-17T05:37:12.391Z,
       includeInAnalytics: 0,
-      identity: '16456831696',
+      identity: '16455684796',
       properties: {
-        meeting_id: '16456831696',
+        meeting_id: '16455684796',
+        meeting_title: 'final meeting attendance test 2',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-17T05:45:00Z',
+        meeting_end_time: '2023-03-17T06:15:00Z',
         contact_details: [
           {
             id: '51',
@@ -5271,46 +5221,11 @@
       identity: '16454004433',
       properties: {
         meeting_id: '16454004433',
-        contact_details: [
-          {
-            id: '51',
-            email: 'bh@hubspot.com',
-            contact_name: 'Brian Halligan (Sample Contact)',
-            contact_title: 'CEO',
-            contact_source: 'OFFLINE',
-            contact_status: null,
-            contact_score: 0
-          }
-        ]
-      }
-    },
-    {
-      actionName: 'Meeting Created',
-      actionDate: 2023-03-17T22:31:08.806Z,
-      includeInAnalytics: 0,
-      identity: '16472006592',
-      properties: {
-        meeting_id: '16472006592',
-        contact_details: [
-          {
-            id: '301',
-            email: 'jennifer@company4.com',
-            contact_name: 'Jennifer Michaels',
-            contact_title: 'COO',
-            contact_source: 'OFFLINE',
-            contact_status: null,
-            contact_score: 0
-          }
-        ]
-      }
-    },
-    {
-      actionName: 'Meeting Created',
-      actionDate: 2023-03-18T07:36:11.116Z,
-      includeInAnalytics: 0,
-      identity: '16483875566',
-      properties: {
-        meeting_id: '16483875566',
+        meeting_title: 'final meeting attendance tetst 3',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-17T06:00:00Z',
+        meeting_end_time: '2023-03-17T06:30:00Z',
         contact_details: [
           {
             id: '51',
@@ -5331,6 +5246,216 @@
       identity: '16454644931',
       properties: {
         meeting_id: '16454644931',
+        meeting_title: 'final reschedule attended test',
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-17T06:15:00Z',
+        meeting_end_time: '2023-03-17T06:45:00Z',
+        contact_details: [
+          {
+            id: '51',
+            email: 'bh@hubspot.com',
+            contact_name: 'Brian Halligan (Sample Contact)',
+            contact_title: 'CEO',
+            contact_source: 'OFFLINE',
+            contact_status: null,
+            contact_score: 0
+          }
+        ]
+      }
+    },
+    {
+      actionName: 'Meeting Created',
+      actionDate: 2023-03-17T07:43:56.683Z,
+      includeInAnalytics: 0,
+      identity: '16456795343',
+      properties: {
+        meeting_id: '16456795343',
+        meeting_title: 'testing new meeting bug',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-17T07:45:00Z',
+        meeting_end_time: '2023-03-17T08:15:00Z',
+        contact_details: [
+          {
+            id: '51',
+            email: 'bh@hubspot.com',
+            contact_name: 'Brian Halligan (Sample Contact)',
+            contact_title: 'CEO',
+            contact_source: 'OFFLINE',
+            contact_status: null,
+            contact_score: 0
+          }
+        ]
+      }
+    },
+    {
+      actionName: 'Meeting Created',
+      actionDate: 2023-03-17T07:49:08.168Z,
+      includeInAnalytics: 0,
+      identity: '16456831696',
+      properties: {
+        meeting_id: '16456831696',
+        meeting_title: "testing arda's bug",
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-17T08:15:00Z',
+        meeting_end_time: '2023-03-17T08:45:00Z',
+        contact_details: [
+          {
+            id: '51',
+            email: 'bh@hubspot.com',
+            contact_name: 'Brian Halligan (Sample Contact)',
+            contact_title: 'CEO',
+            contact_source: 'OFFLINE',
+            contact_status: null,
+            contact_score: 0
+          }
+        ]
+      }
+    },
+    {
+      actionName: 'Meeting Created',
+      actionDate: 2023-03-17T08:18:32.976Z,
+      includeInAnalytics: 0,
+      identity: '16457037808',
+      properties: {
+        meeting_id: '16457037808',
+        meeting_title: 'testing new bug',
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-17T08:30:00Z',
+        meeting_end_time: '2023-03-17T09:00:00Z',
+        contact_details: [
+          {
+            id: '51',
+            email: 'bh@hubspot.com',
+            contact_name: 'Brian Halligan (Sample Contact)',
+            contact_title: 'CEO',
+            contact_source: 'OFFLINE',
+            contact_status: null,
+            contact_score: 0
+          }
+        ]
+      }
+    },
+    {
+      actionName: 'Meeting Created',
+      actionDate: 2023-03-17T08:28:11.214Z,
+      includeInAnalytics: 0,
+      identity: '16457087713',
+      properties: {
+        meeting_id: '16457087713',
+        meeting_title: "testing arda's bug 2",
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-17T08:45:00Z',
+        meeting_end_time: '2023-03-17T09:15:00Z',
+        contact_details: [
+          {
+            id: '51',
+            email: 'bh@hubspot.com',
+            contact_name: 'Brian Halligan (Sample Contact)',
+            contact_title: 'CEO',
+            contact_source: 'OFFLINE',
+            contact_status: null,
+            contact_score: 0
+          }
+        ]
+      }
+    },
+    {
+      actionName: 'Meeting Created',
+      actionDate: 2023-03-17T22:31:08.806Z,
+      includeInAnalytics: 0,
+      identity: '16472006592',
+      properties: {
+        meeting_id: '16472006592',
+        meeting_description: '<div style="" dir="auto" data-top-level="true"><p style="margin:0;">Test</p></div>',
+        meeting_start_time: '2023-03-17T22:45:00Z',
+        meeting_end_time: '2023-03-17T23:00:00Z',
+        contact_details: [
+          {
+            id: '301',
+            email: 'jennifer@company4.com',
+            contact_name: 'Jennifer Michaels',
+            contact_title: 'COO',
+            contact_source: 'OFFLINE',
+            contact_status: null,
+            contact_score: 0
+          }
+        ]
+      }
+    },
+    {
+      actionName: 'Meeting Created',
+      actionDate: 2023-03-18T07:36:11.116Z,
+      includeInAnalytics: 0,
+      identity: '16483875566',
+      properties: {
+        meeting_id: '16483875566',
+        meeting_title: 'timestamp comparison',
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-18T08:00:00Z',
+        meeting_end_time: '2023-03-18T08:30:00Z',
+        contact_details: [
+          {
+            id: '51',
+            email: 'bh@hubspot.com',
+            contact_name: 'Brian Halligan (Sample Contact)',
+            contact_title: 'CEO',
+            contact_source: 'OFFLINE',
+            contact_status: null,
+            contact_score: 0
+          }
+        ]
+      }
+    },
+    {
+      actionName: 'Meeting Created',
+      actionDate: 2023-03-19T22:41:51.519Z,
+      includeInAnalytics: 0,
+      identity: '16494141927',
+      properties: {
+        meeting_id: '16494141927',
+        meeting_title: 'testing action_date overhaul',
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-19T22:45:00Z',
+        meeting_end_time: '2023-03-19T23:15:00Z',
+        contact_details: [
+          {
+            id: '51',
+            email: 'bh@hubspot.com',
+            contact_name: 'Brian Halligan (Sample Contact)',
+            contact_title: 'CEO',
+            contact_source: 'OFFLINE',
+            contact_status: null,
+            contact_score: 0
+          }
+        ]
+      }
+    },
+    {
+      actionName: 'Meeting Created',
+      actionDate: 2023-03-19T23:05:54.857Z,
+      includeInAnalytics: 0,
+      identity: '16494142938',
+      properties: {
+        meeting_id: '16494142938',
+        meeting_title: 'final final test',
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-19T23:15:00Z',
+        meeting_end_time: '2023-03-19T23:45:00Z',
         contact_details: [
           {
             id: '51',
@@ -5351,6 +5476,37 @@
       identity: '16494359753',
       properties: {
         meeting_id: '16494359753',
+        meeting_title: 'second meeting test against query logic',
+        meeting_description: '<p></p>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_start_time: '2023-03-19T23:45:00Z',
+        meeting_end_time: '2023-03-20T00:15:00Z',
+        contact_details: [
+          {
+            id: '51',
+            email: 'bh@hubspot.com',
+            contact_name: 'Brian Halligan (Sample Contact)',
+            contact_title: 'CEO',
+            contact_source: 'OFFLINE',
+            contact_status: null,
+            contact_score: 0
+          }
+        ]
+      }
+    },
+    {
+      actionName: 'Meeting Created',
+      actionDate: 2023-03-19T23:38:04.709Z,
+      includeInAnalytics: 0,
+      identity: '16494528971',
+      properties: {
+        meeting_id: '16494528971',
+        meeting_title: 'optimized attendance sql query',
+        meeting_description: '<div dir="auto" data-top-level="true"><br></div>',
+        hs_meeting_outcome: 'SCHEDULED',
+        meeting_notes: '<div dir="auto" data-top-level="true"><br></div>',
+        meeting_start_time: '2023-03-19T23:45:00Z',
+        meeting_end_time: '2023-03-20T00:15:00Z',
         contact_details: [
           {
             id: '51',
@@ -5371,6 +5527,9 @@
       identity: '16838470090',
       properties: {
         meeting_id: '16838470090',
+        meeting_description: '<div style="" dir="auto" data-top-level="true"><p style="margin:0;">Test</p></div>',
+        meeting_start_time: '2023-04-06T19:17:08.379Z',
+        meeting_end_time: '2023-04-06T19:32:08.379Z',
         contact_details: [
           {
             id: '301',
@@ -5383,29 +5542,9 @@
           }
         ]
       }
-    },
-    {
-      actionName: 'Meeting Created',
-      actionDate: 2023-03-19T23:38:04.709Z,
-      includeInAnalytics: 0,
-      identity: '16494528971',
-      properties: {
-        meeting_id: '16494528971',
-        contact_details: [
-          {
-            id: '51',
-            email: 'bh@hubspot.com',
-            contact_name: 'Brian Halligan (Sample Contact)',
-            contact_title: 'CEO',
-            contact_source: 'OFFLINE',
-            contact_status: null,
-            contact_score: 0
-          }
-        ]
-      }
     }
   ]
 }
-2025-05-16 22:31:28 info: drained queue
-2025-05-16 22:31:28 info: finish processing account
-2025-05-16 22:31:28 info: finish pulling data from HubSpot. exiting...
+2025-05-16 23:56:36 info: drained queue
+2025-05-16 23:56:36 info: finish processing account
+2025-05-16 23:56:36 info: finish pulling data from HubSpot. exiting...

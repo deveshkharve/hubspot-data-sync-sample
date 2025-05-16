@@ -22,6 +22,89 @@ const generateLastModifiedDateFilter = (
   return lastModifiedDateFilter;
 };
 
+const processCompanyRecord = async (company, lastPulledDate, qu) => {
+  if (!company.properties) return;
+
+  const actionTemplate = {
+    includeInAnalytics: 0,
+    properties: {
+      company_id: company.id,
+      company_domain: company.properties.domain,
+      company_industry: company.properties.industry,
+    },
+  };
+
+  const isCreated =
+    !lastPulledDate || new Date(company.createdAt) > lastPulledDate;
+
+  logger.info(
+    `Getting Company data for ${company.id}. isCreated: ${isCreated}`
+  );
+
+  qu.push({
+    actionName: isCreated ? "Company Created" : "Company Updated",
+    actionDate:
+      new Date(isCreated ? company.createdAt : company.updatedAt) - 2000,
+    ...actionTemplate,
+  });
+};
+
+const getCompanies = async (lastPulledDate, now, offsetObject, limit) => {
+  const lastModifiedDate = offsetObject.lastModifiedDate || lastPulledDate;
+  const lastModifiedDateFilter = generateLastModifiedDateFilter(
+    lastModifiedDate,
+    now
+  );
+  const searchObject = {
+    filterGroups: [lastModifiedDateFilter],
+    sorts: [{ propertyName: "hs_lastmodifieddate", direction: "ASCENDING" }],
+    properties: [
+      "name",
+      "domain",
+      "country",
+      "industry",
+      "description",
+      "annualrevenue",
+      "numberofemployees",
+      "hs_lead_status",
+    ],
+    limit,
+    after: offsetObject.after,
+  };
+
+  let searchResult = {};
+
+  let tryCount = 0;
+  while (tryCount <= 4) {
+    try {
+      searchResult = await hubspotClient.crm.companies.searchApi.doSearch(
+        searchObject
+      );
+      break;
+    } catch (err) {
+      logger.error("Failed to fetch companies", {
+        error: err.message,
+        searchObject,
+        tryCount,
+      });
+
+      tryCount++;
+
+      await checkAndRefreshToken(domain, hubId);
+
+      logger.debug(`retrying...[${tryCount}]`);
+      await delay(5000 * Math.pow(2, tryCount));
+    }
+  }
+
+  if (!searchResult) {
+    logger.error("Failed to fetch companies for the 4th time. Aborting.");
+    throw new Error("Failed to fetch companies for the 4th time. Aborting.");
+  }
+
+  return searchResult;
+};
+
 /**
  * Get recently modified companies as 100 companies per page
  */
@@ -38,58 +121,12 @@ const processCompanies = async (domain, hubId, qu) => {
   const limit = 100;
 
   while (hasMore) {
-    const lastModifiedDate = offsetObject.lastModifiedDate || lastPulledDate;
-    const lastModifiedDateFilter = generateLastModifiedDateFilter(
-      lastModifiedDate,
-      now
+    const searchResult = await getCompanies(
+      lastPulledDate,
+      now,
+      offsetObject,
+      limit
     );
-    const searchObject = {
-      filterGroups: [lastModifiedDateFilter],
-      sorts: [{ propertyName: "hs_lastmodifieddate", direction: "ASCENDING" }],
-      properties: [
-        "name",
-        "domain",
-        "country",
-        "industry",
-        "description",
-        "annualrevenue",
-        "numberofemployees",
-        "hs_lead_status",
-      ],
-      limit,
-      after: offsetObject.after,
-    };
-
-    let searchResult = {};
-
-    let tryCount = 0;
-    while (tryCount <= 4) {
-      try {
-        searchResult = await hubspotClient.crm.companies.searchApi.doSearch(
-          searchObject
-        );
-        break;
-      } catch (err) {
-        logger.error("Failed to fetch companies", {
-          error: err.message,
-          searchObject,
-          tryCount,
-        });
-
-        tryCount++;
-
-        await checkAndRefreshToken(domain, hubId);
-
-        logger.debug(`retrying...[${tryCount}]`);
-        await delay(5000 * Math.pow(2, tryCount));
-      }
-    }
-
-    if (!searchResult) {
-      logger.error("Failed to fetch companies for the 4th time. Aborting.");
-      throw new Error("Failed to fetch companies for the 4th time. Aborting.");
-    }
-
     const data = searchResult?.results || [];
     offsetObject.after = parseInt(searchResult?.paging?.next?.after);
 
@@ -98,31 +135,9 @@ const processCompanies = async (domain, hubId, qu) => {
       after: offsetObject.after,
     });
 
+    // check if can be processed in batch
     data.forEach((company) => {
-      if (!company.properties) return;
-
-      const actionTemplate = {
-        includeInAnalytics: 0,
-        properties: {
-          company_id: company.id,
-          company_domain: company.properties.domain,
-          company_industry: company.properties.industry,
-        },
-      };
-
-      const isCreated =
-        !lastPulledDate || new Date(company.createdAt) > lastPulledDate;
-
-      logger.info(
-        `Getting Company data for ${company.id}. isCreated: ${isCreated}`
-      );
-
-      qu.push({
-        actionName: isCreated ? "Company Created" : "Company Updated",
-        actionDate:
-          new Date(isCreated ? company.createdAt : company.updatedAt) - 2000,
-        ...actionTemplate,
-      });
+      processCompanyRecord(company, lastPulledDate, qu);
     });
 
     if (!offsetObject?.after) {

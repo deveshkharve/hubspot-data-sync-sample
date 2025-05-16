@@ -117,32 +117,101 @@ const getContactDetails = async (contactId) => {
   }
 };
 
-const getContactDetailsInBatch = async (contactIds) => {
-  try {
-    const contactDetails = await hubspotClient.crm.contacts.batchApi.read(
-      contactIds,
-      [
-        "firstname",
-        "lastname",
-        "email",
-        "jobtitle",
-        "hs_analytics_source",
-        "hs_lead_status",
-        "hubspotscore",
-      ]
-    );
+const getContacts = async (lastPulledDate, now, offsetObject, limit) => {
+  const lastModifiedDate = offsetObject.lastModifiedDate || lastPulledDate;
+  const lastModifiedDateFilter = generateLastModifiedDateFilter(
+    lastModifiedDate,
+    now,
+    "lastmodifieddate"
+  );
+  const searchObject = {
+    filterGroups: [lastModifiedDateFilter],
+    sorts: [{ propertyName: "lastmodifieddate", direction: "ASCENDING" }],
+    properties: [
+      "firstname",
+      "lastname",
+      "jobtitle",
+      "email",
+      "hubspotscore",
+      "hs_lead_status",
+      "hs_analytics_source",
+      "hs_latest_source",
+    ],
+    limit,
+    after: offsetObject.after,
+  };
 
-    contactDetails.forEach((contact) => {
-      cache.set(contact.id, contact);
-    });
+  let searchResult = {};
 
-    return contactDetails;
-  } catch (err) {
-    logger.error(`Failed to fetch contact details in batch`, {
-      error: err.message,
-    });
-    return null;
+  let tryCount = 0;
+  while (tryCount <= 4) {
+    try {
+      searchResult = await hubspotClient.crm.contacts.searchApi.doSearch(
+        searchObject
+      );
+      break;
+    } catch (err) {
+      logger.error("Failed to fetch contacts", {
+        error: err.message,
+        searchObject,
+        tryCount,
+      });
+
+      tryCount++;
+
+      await checkAndRefreshToken(domain, hubId);
+
+      logger.debug(`retrying...[${tryCount}]`);
+      await delay(5000 * Math.pow(2, tryCount));
+    }
   }
+
+  if (!searchResult) {
+    logger.error("Failed to fetch contacts for the 4th time. Aborting.");
+    throw new Error("Failed to fetch contacts for the 4th time. Aborting.");
+  }
+
+  return searchResult;
+};
+
+const processContactRecord = async (
+  contact,
+  companyAssociations,
+  lastPulledDate,
+  qu
+) => {
+  if (!contact.properties || !contact.properties.email) return;
+
+  const companyId = companyAssociations[contact.id];
+
+  const isCreated = new Date(contact.createdAt) > lastPulledDate;
+
+  const userProperties = {
+    company_id: companyId,
+    contact_name: (
+      (contact.properties.firstname || "") +
+      " " +
+      (contact.properties.lastname || "")
+    ).trim(),
+    contact_title: contact.properties.jobtitle,
+    contact_source: contact.properties.hs_analytics_source,
+    contact_status: contact.properties.hs_lead_status,
+    contact_score: parseInt(contact.properties.hubspotscore) || 0,
+  };
+
+  const actionTemplate = {
+    includeInAnalytics: 0,
+    identity: contact.properties.email,
+    properties: filterNullValuesFromObject(userProperties),
+  };
+
+  logger.info("processing contact info", contact.id);
+
+  qu.push({
+    actionName: isCreated ? "Contact Created" : "Contact Updated",
+    actionDate: new Date(isCreated ? contact.createdAt : contact.updatedAt),
+    ...actionTemplate,
+  });
 };
 
 /**
@@ -161,59 +230,12 @@ const processContacts = async (domain, hubId, qu) => {
   const limit = 100;
 
   while (hasMore) {
-    const lastModifiedDate = offsetObject.lastModifiedDate || lastPulledDate;
-    const lastModifiedDateFilter = generateLastModifiedDateFilter(
-      lastModifiedDate,
+    const searchResult = await getContacts(
+      lastPulledDate,
       now,
-      "lastmodifieddate"
+      offsetObject,
+      limit
     );
-    const searchObject = {
-      filterGroups: [lastModifiedDateFilter],
-      sorts: [{ propertyName: "lastmodifieddate", direction: "ASCENDING" }],
-      properties: [
-        "firstname",
-        "lastname",
-        "jobtitle",
-        "email",
-        "hubspotscore",
-        "hs_lead_status",
-        "hs_analytics_source",
-        "hs_latest_source",
-      ],
-      limit,
-      after: offsetObject.after,
-    };
-
-    let searchResult = {};
-
-    let tryCount = 0;
-    while (tryCount <= 4) {
-      try {
-        searchResult = await hubspotClient.crm.contacts.searchApi.doSearch(
-          searchObject
-        );
-        break;
-      } catch (err) {
-        logger.error("Failed to fetch contacts", {
-          error: err.message,
-          searchObject,
-          tryCount,
-        });
-
-        tryCount++;
-
-        await checkAndRefreshToken(domain, hubId);
-
-        logger.debug(`retrying...[${tryCount}]`);
-        await delay(5000 * Math.pow(2, tryCount));
-      }
-    }
-
-    if (!searchResult) {
-      logger.error("Failed to fetch contacts for the 4th time. Aborting.");
-      throw new Error("Failed to fetch contacts for the 4th time. Aborting.");
-    }
-
     const data = searchResult.results || [];
     offsetObject.after = parseInt(searchResult.paging?.next?.after);
 
@@ -227,39 +249,9 @@ const processContacts = async (domain, hubId, qu) => {
     const { companyAssociations, contactsToAssociate } =
       await getCompanyAssociations(contactIds);
 
+    // check if can be processed in batch
     data.forEach((contact) => {
-      if (!contact.properties || !contact.properties.email) return;
-
-      const companyId = companyAssociations[contact.id];
-
-      const isCreated = new Date(contact.createdAt) > lastPulledDate;
-
-      const userProperties = {
-        company_id: companyId,
-        contact_name: (
-          (contact.properties.firstname || "") +
-          " " +
-          (contact.properties.lastname || "")
-        ).trim(),
-        contact_title: contact.properties.jobtitle,
-        contact_source: contact.properties.hs_analytics_source,
-        contact_status: contact.properties.hs_lead_status,
-        contact_score: parseInt(contact.properties.hubspotscore) || 0,
-      };
-
-      const actionTemplate = {
-        includeInAnalytics: 0,
-        identity: contact.properties.email,
-        properties: filterNullValuesFromObject(userProperties),
-      };
-
-      logger.info("processing contact info", contact.id);
-
-      qu.push({
-        actionName: isCreated ? "Contact Created" : "Contact Updated",
-        actionDate: new Date(isCreated ? contact.createdAt : contact.updatedAt),
-        ...actionTemplate,
-      });
+      processContactRecord(contact, companyAssociations, lastPulledDate, qu);
     });
 
     if (!offsetObject?.after) {
@@ -282,7 +274,6 @@ const processContacts = async (domain, hubId, qu) => {
 const ContactService = {
   processContacts,
   getContactDetails,
-  getContactDetailsInBatch,
 };
 
 module.exports = ContactService;

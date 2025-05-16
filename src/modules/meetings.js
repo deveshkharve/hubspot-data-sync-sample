@@ -28,16 +28,10 @@ const generateLastModifiedDateFilter = (
 };
 
 /**
- * Get associated contacts for a meeting
+ * Get associated contacts for a meeting. This is a rate limited function.
  */
 const getAssociatedContacts = async (meetingId) => {
   try {
-    // const response = await hubspotClient.crm.objects.associationsApi.getAll(
-    //   "meetings",
-    //   meetingId,
-    //   "contacts"
-    // );
-
     const getAllLimited = rateLimited(
       hubspotClient.crm.objects.associationsApi.getAll.bind(
         hubspotClient.crm.objects.associationsApi
@@ -45,35 +39,12 @@ const getAssociatedContacts = async (meetingId) => {
     );
 
     const response = await getAllLimited("meetings", meetingId, "contacts");
-
     return response.results.map((assoc) => assoc.id);
   } catch (err) {
     logger.error(`Failed to get associated contacts for meeting ${meetingId}`, {
       error: err.message,
     });
     return [];
-  }
-};
-
-/**
- * Get meeting details
- */
-const getMeetingDetails = async (meetingId) => {
-  logger.info(`Getting meeting details for ${meetingId}`);
-  try {
-    const response = await hubspotClient.apiRequest({
-      method: "get",
-      path: `/crm/v3/objects/meetings/${meetingId}`,
-    });
-
-    const data = await response.json();
-    logger.debug("meeting data", data);
-    return data;
-  } catch (error) {
-    logger.error(`Failed to get meeting details for ${meetingId}`, {
-      error: error.message,
-    });
-    return null;
   }
 };
 
@@ -93,28 +64,28 @@ const prepareMeetingActionObject = (meetingDetails, contactDetailsList) => {
   };
 };
 
-const processMeetingRecord = async (meetingData, lastPulledDate, qu) => {
-  if (!meetingData.properties) return;
+/**
+ * Process a meeting record
+ */
+const processMeetingRecord = async (meetingDetails, lastPulledDate, qu) => {
+  if (!meetingDetails.properties) return;
 
-  const isCreated = new Date(meetingData.createdAt) > lastPulledDate;
+  const isCreated = new Date(meetingDetails.createdAt) > lastPulledDate;
   logger.debug("Processing meeting", {
-    meetingId: meetingData.id,
+    meetingId: meetingDetails.id,
     isCreated,
   });
 
-  const meetingDetails = await getMeetingDetails(meetingData.id);
-  //   console.log("meetingData>>>", meetingData);
-  if (!meetingData) return;
+  if (!meetingDetails) return;
 
-  const contactIds = await getAssociatedContacts(meetingData.id);
+  // TODO: figure out if batch API is available
+  const contactIds = await getAssociatedContacts(meetingDetails.id);
   const contactDetailsList = [];
-  //   console.log("contactIds>>>", contactIds);
 
   for (const contactId of contactIds) {
-    // TODO: figure out if batch API is available
     const contactDetails = await getContactDetails(contactId);
     logger.debug("Fetched contactProps for:", {
-      meetingId: meetingData.id,
+      meetingId: meetingDetails.id,
       contactId,
       contactDetails,
     });
@@ -124,7 +95,7 @@ const processMeetingRecord = async (meetingData, lastPulledDate, qu) => {
   }
 
   logger.debug("Meeting & contacts processed", {
-    meetingId: meetingData.id,
+    meetingId: meetingDetails.id,
     contacts: contactDetailsList.length,
   });
 
@@ -140,27 +111,112 @@ const processMeetingRecord = async (meetingData, lastPulledDate, qu) => {
   };
 
   try {
-    qu.push(
-      {
-        actionName: isCreated ? "Meeting Created" : "Meeting Updated",
-        actionDate: new Date(
-          isCreated ? meetingData.createdAt : meetingData.updatedAt
-        ),
-        ...actionTemplate,
-      }
-      // ,(err) => {
-      //   if (err) {
-      //     console.error("Meeting Queue action failed", err);
-      //   } else {
-      //     console.log("Meeting Action completed");
-      //   }
-      // }
-    );
+    qu.push({
+      actionName: isCreated ? "Meeting Created" : "Meeting Updated",
+      actionDate: new Date(
+        isCreated ? meetingDetails.createdAt : meetingDetails.updatedAt
+      ),
+      ...actionTemplate,
+    });
   } catch (err) {
     logger.error("error queuing action>>>", err);
   }
 };
 
+/**
+ * Get meetings with last modified date filter
+ */
+const getMeetings = async (lastPulledDate, now, offsetObject, limit) => {
+  const lastModifiedDate = offsetObject.lastModifiedDate || lastPulledDate;
+  const lastModifiedDateFilter = generateLastModifiedDateFilter(
+    lastModifiedDate,
+    now
+  );
+  const searchObject = {
+    filterGroups: [lastModifiedDateFilter],
+    sorts: [{ propertyName: "hs_lastmodifieddate", direction: "ASCENDING" }],
+    properties: [
+      "hs_timestamp",
+      "hubspot_owner_id",
+      "hs_meeting_title",
+      "hs_meeting_body",
+      "hs_internal_meeting_notes",
+      "hs_meeting_external_url",
+      "hs_meeting_location",
+      "hs_meeting_start_time",
+      "hs_meeting_end_time",
+      "hs_meeting_outcome",
+    ],
+    limit,
+    after: offsetObject.after,
+  };
+
+  let searchResult = {};
+
+  let tryCount = 0;
+  while (tryCount <= 4) {
+    try {
+      searchResult =
+        await hubspotClient.crm.objects.meetings.searchApi.doSearch(
+          searchObject
+        );
+      break;
+    } catch (err) {
+      logger.error("Failed to fetch meetings", {
+        error: err.message,
+        searchObject,
+        tryCount,
+      });
+
+      tryCount++;
+
+      await checkAndRefreshToken(domain, hubId);
+
+      logger.debug(`retrying...[${tryCount}]`);
+      await delay(5000 * Math.pow(2, tryCount));
+    }
+  }
+
+  if (!searchResult) {
+    logger.error("Failed to fetch meetings for the 4th time. Aborting.");
+    throw new Error("Failed to fetch meetings for the 4th time. Aborting.");
+  }
+
+  return searchResult;
+};
+
+/**
+ * Process meetings results data in batches
+ */
+const processMeetingsDataInBatch = async (
+  meetings,
+  lastPulledDate,
+  qu,
+  batchSize = 10
+) => {
+  const totalBatches = Math.ceil(meetings.length / batchSize);
+
+  for (let batchIndex = 0; batchIndex < totalBatches; batchIndex++) {
+    const start = batchIndex * batchSize;
+    const batch = meetings.slice(start, start + batchSize);
+
+    await Promise.all(
+      batch.map((meetingData) =>
+        processMeetingRecord(meetingData, lastPulledDate, qu)
+      )
+    );
+
+    logger.debug(
+      `Processed batch ${batchIndex + 1}/${totalBatches} (${
+        batch.length
+      } meetings)`
+    );
+  }
+};
+
+/**
+ * Fetch and process meetings
+ */
 const processMeetings = async (domain, hubId, qu) => {
   logger.info("Processing meetings for domain", domain._id);
   const account = domain.integrations.hubspot.accounts.find(
@@ -175,60 +231,13 @@ const processMeetings = async (domain, hubId, qu) => {
   const limit = 100;
 
   while (hasMore) {
-    const lastModifiedDate = offsetObject.lastModifiedDate || lastPulledDate;
-    const lastModifiedDateFilter = generateLastModifiedDateFilter(
-      lastModifiedDate,
-      now
+    // get meeting data with cursor
+    const searchResult = await getMeetings(
+      lastPulledDate,
+      now,
+      offsetObject,
+      limit
     );
-    const searchObject = {
-      filterGroups: [lastModifiedDateFilter],
-      sorts: [{ propertyName: "hs_lastmodifieddate", direction: "ASCENDING" }],
-      properties: [
-        "hs_timestamp",
-        "hubspot_owner_id",
-        "hs_meeting_title",
-        "hs_meeting_body",
-        "hs_internal_meeting_notes",
-        "hs_meeting_external_url",
-        "hs_meeting_location",
-        "hs_meeting_start_time",
-        "hs_meeting_end_time",
-        "hs_meeting_outcome",
-      ],
-      limit,
-      after: offsetObject.after,
-    };
-
-    let searchResult = {};
-
-    let tryCount = 0;
-    while (tryCount <= 4) {
-      try {
-        searchResult =
-          await hubspotClient.crm.objects.meetings.searchApi.doSearch(
-            searchObject
-          );
-        break;
-      } catch (err) {
-        logger.error("Failed to fetch meetings", {
-          error: err.message,
-          searchObject,
-          tryCount,
-        });
-
-        tryCount++;
-
-        await checkAndRefreshToken(domain, hubId);
-
-        logger.debug(`retrying...[${tryCount}]`);
-        await delay(5000 * Math.pow(2, tryCount));
-      }
-    }
-
-    if (!searchResult) {
-      logger.error("Failed to fetch meetings for the 4th time. Aborting.");
-      throw new Error("Failed to fetch meetings for the 4th time. Aborting.");
-    }
 
     const data = searchResult?.results || [];
     offsetObject.after = parseInt(searchResult?.paging?.next?.after);
@@ -238,19 +247,8 @@ const processMeetings = async (domain, hubId, qu) => {
       after: offsetObject.after,
     });
 
-    // process meetings data
-
-    // Process each meeting sequentially to avoid async issues in forEach
-    const batchSize = 10; // Adjust batch size as needed
-    for (let i = 0; i < data.length; i += batchSize) {
-      const batch = data.slice(i, i + batchSize);
-      await Promise.all(
-        batch.map((meetingData) =>
-          processMeetingRecord(meetingData, lastPulledDate, qu)
-        )
-      );
-      logger.debug(`Processed batch of ${batch.length} meetings`);
-    }
+    // Process each meeting data in batch
+    await processMeetingsDataInBatch(data, lastPulledDate, qu, 10);
 
     if (!offsetObject?.after) {
       hasMore = false;

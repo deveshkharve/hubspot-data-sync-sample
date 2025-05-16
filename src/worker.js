@@ -56,6 +56,7 @@ const pullDataFromHubspot = async () => {
       await MeetingService.processMeetings(domain, account.hubId, qu);
       logger.info("processed meetings");
     } catch (err) {
+      console.log(err);
       logger.error(`failed to process meetings: ${err.message}`, {
         apiKey: domain.apiKey,
         metadata: { operation: "processMeetings", hubId: account.hubId },
@@ -78,7 +79,7 @@ const pullDataFromHubspot = async () => {
   }
 
   logger.info("finish pulling data from HubSpot. exiting...");
-  //  process.exit();
+  process.exit();
 };
 
 module.exports = pullDataFromHubspot;
