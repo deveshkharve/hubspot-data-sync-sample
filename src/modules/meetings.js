@@ -6,6 +6,9 @@ const { getContactDetails } = require("./contacts");
 
 const hubspotClient = getHubspotClient();
 
+/**
+ * Generate the last modified date filter
+ */
 const generateLastModifiedDateFilter = (
   date,
   nowDate,
@@ -23,6 +26,9 @@ const generateLastModifiedDateFilter = (
   return lastModifiedDateFilter;
 };
 
+/**
+ * Get associated contacts for a meeting
+ */
 const getAssociatedContacts = async (meetingId) => {
   try {
     const response = await hubspotClient.crm.objects.associationsApi.getAll(
@@ -39,6 +45,9 @@ const getAssociatedContacts = async (meetingId) => {
   }
 };
 
+/**
+ * Get meeting details
+ */
 const getMeetingDetails = async (meetingId) => {
   logger.info(`Getting meeting details for ${meetingId}`);
   try {
@@ -56,6 +65,22 @@ const getMeetingDetails = async (meetingId) => {
     });
     return null;
   }
+};
+
+/**
+ * Prepare the meeting action object
+ */
+const prepareMeetingActionObject = (meetingDetails, contactDetailsList) => {
+  return {
+    meeting_id: meetingDetails.id,
+    meeting_title: meetingDetails.properties.hs_meeting_title,
+    meeting_description: meetingDetails.properties.hs_meeting_body,
+    hs_meeting_outcome: meetingDetails.properties.hs_meeting_outcome,
+    meeting_notes: meetingDetails.properties.hs_internal_meeting_notes,
+    meeting_start_time: meetingDetails.properties.hs_meeting_start_time,
+    meeting_end_time: meetingDetails.properties.hs_meeting_end_time,
+    contact_details: contactDetailsList,
+  };
 };
 
 const processMeetingRecord = async (meetingData, lastPulledDate, qu) => {
@@ -92,16 +117,11 @@ const processMeetingRecord = async (meetingData, lastPulledDate, qu) => {
     contacts: contactDetailsList.length,
   });
 
-  const meetingProperties = {
-    meeting_id: meetingDetails.id,
-    meeting_title: meetingDetails.properties.hs_meeting_title,
-    meeting_description: meetingDetails.properties.hs_meeting_body,
-    hs_meeting_outcome: meetingDetails.properties.hs_meeting_outcome,
-    meeting_notes: meetingDetails.properties.hs_internal_meeting_notes,
-    meeting_start_time: meetingDetails.properties.hs_meeting_start_time,
-    meeting_end_time: meetingDetails.properties.hs_meeting_end_time,
-    contact_details: contactDetailsList,
-  };
+  const meetingProperties = prepareMeetingActionObject(
+    meetingDetails,
+    contactDetailsList
+  );
+
   const actionTemplate = {
     includeInAnalytics: 0,
     identity: `${meetingDetails.id}`,

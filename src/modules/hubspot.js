@@ -3,6 +3,9 @@ const hubspot = require("@hubspot/api-client");
 const hubspotClient = new hubspot.Client({ accessToken: "" });
 let expirationDate;
 
+/**
+ * Get HubSpot client
+ */
 const getHubspotClient = () => {
   return hubspotClient;
 };
@@ -41,6 +44,9 @@ const refreshAccessToken = async (domain, hubId) => {
     });
 };
 
+/**
+ * Check if the access token is expired and refresh it if it is
+ */
 const checkAndRefreshToken = async (domain, hubId) => {
   if (new Date() > expirationDate) await refreshAccessToken(domain, hubId);
 };

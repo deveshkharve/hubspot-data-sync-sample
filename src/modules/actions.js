@@ -2,6 +2,9 @@ const Actions = require("../db/models/Actions");
 const logger = require("../utils/logger");
 const _ = require("lodash");
 
+/**
+ * Create an action in DB
+ */
 const createAction = async (action) => {
   const res = await Actions.create(action);
   logger.debug("action created", {
@@ -10,6 +13,9 @@ const createAction = async (action) => {
   return res;
 };
 
+/**
+ * Create a batch of actions in DB
+ */
 const createActionsBatch = async (actions) => {
   try {
     logger.info("Creating actions batch", {
